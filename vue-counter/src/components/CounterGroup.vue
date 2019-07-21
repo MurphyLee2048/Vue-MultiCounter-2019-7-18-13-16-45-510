@@ -1,19 +1,21 @@
 <template>
   <div>
-    <counter v-for+="n in counternumber"></counter>
+    <input v-model.number="number" placeholder="CounterNumber">
+    <Counter v-for="n in number"></Counter>
   </div>
 </template>
 
 <script>
+  import Counter from "./Counter"
+
   export default {
     name: "CounterGroup",
-    props: {
-
-      counterNum: Number
+    data() {
+      return {
+        number: 1
+      }
     },
-    beforeDestroy: function () {
-      this.$emit('destory', this.count);
-    },
+    components: {Counter}
   }
 </script>
 
