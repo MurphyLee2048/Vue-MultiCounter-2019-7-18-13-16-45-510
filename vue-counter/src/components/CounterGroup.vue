@@ -1,7 +1,8 @@
 <template>
   <div>
-    <input v-model.number="number" placeholder="CounterNumber">
-    <Counter v-for="n in number"></Counter>
+    <input type="number" v-model.number="number" placeholder="CounterNumber">
+    <Counter v-for="n in number" v-on:addall="addall"></Counter>
+    <p>{{sum}}</p>
   </div>
 </template>
 
@@ -12,8 +13,14 @@
     name: "CounterGroup",
     data() {
       return {
-        number: 1
+        number: 1,
+        sum: 0
       }
+    },
+    methods: {
+      addall(count) {
+        this.sum += count;
+      },
     },
     components: {Counter}
   }

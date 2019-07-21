@@ -12,15 +12,20 @@
     methods: {
       increase() {
         this.count++;
+        this.$emit('addall', 1);
       },
       decrease() {
         this.count--;
-      }
+        this.$emit('addall', -1);
+      },
     },
     data() {
       return {
         count: 0
       }
+    },
+    beforeDestroy: function () {
+      this.$emit('addall', this.count*(-1));
     }
   }
 </script>
