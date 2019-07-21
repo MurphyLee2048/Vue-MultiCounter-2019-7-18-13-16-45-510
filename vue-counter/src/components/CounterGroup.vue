@@ -20,7 +20,7 @@
     methods: {
       addall(count) {
         this.sum += count;
-      },
+      }
     },
     components: {Counter}
   }
