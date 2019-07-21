@@ -12,11 +12,11 @@
     methods: {
       increase() {
         this.count++;
-        this.$emit('addall', 1);
+        this.$emit('addAll', 1);
       },
       decrease() {
         this.count--;
-        this.$emit('addall', -1);
+        this.$emit('addAll', -1);
       },
     },
     data() {
@@ -25,7 +25,7 @@
       }
     },
     beforeDestroy: function () {
-      this.$emit('addall', this.count*(-1));
+      this.$emit('addAll', this.count*(-1));
     }
   }
 </script>

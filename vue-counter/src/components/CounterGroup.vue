@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="number" v-model.number="number" placeholder="CounterNumber">
-    <Counter v-for="n in number" v-on:addall="addall"></Counter>
+    <Counter v-for="n in number" v-on:addAll="addAll"></Counter>
     <p>{{sum}}</p>
   </div>
 </template>
@@ -18,7 +18,7 @@
       }
     },
     methods: {
-      addall(count) {
+      addAll(count) {
         this.sum += count;
       }
     },
